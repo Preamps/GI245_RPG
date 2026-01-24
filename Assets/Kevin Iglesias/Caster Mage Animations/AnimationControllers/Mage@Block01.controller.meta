@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 2e3a3bbbdb405524880100b033631b29
+timeCreated: 1571827515
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162341
+  packageName: Mega Animations Pack
+  packageVersion: 1.7.3
+  assetPath: Assets/Kevin Iglesias/Caster Mage Animations/AnimationControllers/Mage@Block01.controller
+  uploadId: 719110

@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 8360507d3f355b94fbb6c98c390e1071
+timeCreated: 1571220330
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162341
+  packageName: Mega Animations Pack
+  packageVersion: 1.7.3
+  assetPath: Assets/Kevin Iglesias/Caster Mage Animations/Scripts/ThrowFireball.cs
+  uploadId: 719110

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 358e301b7674c004bae59dddd26981bd
+timeCreated: 1568309047
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162341
+  packageName: Mega Animations Pack
+  packageVersion: 1.7.3
+  assetPath: Assets/Kevin Iglesias/Villager Animations/AnimatorControllers/Villager-Minning01.controller
+  uploadId: 719110

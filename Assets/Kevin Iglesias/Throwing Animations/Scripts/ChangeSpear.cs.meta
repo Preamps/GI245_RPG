@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c500eb33235e98b449d29b6e4cce2774
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162341
+  packageName: Mega Animations Pack
+  packageVersion: 1.7.3
+  assetPath: Assets/Kevin Iglesias/Throwing Animations/Scripts/ChangeSpear.cs
+  uploadId: 719110

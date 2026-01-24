@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 934292742ce93d1488ea11bc1441c801
+timeCreated: 1571133544
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162341
+  packageName: Mega Animations Pack
+  packageVersion: 1.7.3
+  assetPath: Assets/Kevin Iglesias/Caster Mage Animations/Prefabs/Spells/Nova/PurpleNovaCastEffect.prefab
+  uploadId: 719110

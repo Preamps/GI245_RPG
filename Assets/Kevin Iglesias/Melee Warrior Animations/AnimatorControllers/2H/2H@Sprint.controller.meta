@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 23cbca9edcfda5f4a89c7a3c7bee2f7a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162341
+  packageName: Mega Animations Pack
+  packageVersion: 1.7.3
+  assetPath: Assets/Kevin Iglesias/Melee Warrior Animations/AnimatorControllers/2H/2H@Sprint.controller
+  uploadId: 719110

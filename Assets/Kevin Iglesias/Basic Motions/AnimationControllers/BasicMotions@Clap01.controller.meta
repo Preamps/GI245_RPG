@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 2adac10af7c40ac429ad33af69d27d37
+timeCreated: 1573743306
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162341
+  packageName: Mega Animations Pack
+  packageVersion: 1.7.3
+  assetPath: Assets/Kevin Iglesias/Basic Motions/AnimationControllers/BasicMotions@Clap01.controller
+  uploadId: 719110

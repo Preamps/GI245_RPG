@@ -18,7 +18,7 @@ public class CharAnimation : MonoBehaviour
 
     private void ChooseAnimation(Character c)
     {
-        c.Anim.SetBool("IsIdle",false);
+        c.Anim.SetBool("IsIdle", false);
         c.Anim.SetBool("IsWalk", false);
 
         switch (c.State)
@@ -30,4 +30,5 @@ public class CharAnimation : MonoBehaviour
                 c.Anim.SetBool("IsWalk", true);
         }
     }
+
 }

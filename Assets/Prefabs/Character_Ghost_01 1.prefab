@@ -1232,6 +1232,8 @@ GameObject:
   - component: {fileID: 9517520}
   - component: {fileID: 3493111046887652548}
   - component: {fileID: -7002857828398496672}
+  - component: {fileID: 1651612816134025806}
+  - component: {fileID: -4628593474198100402}
   m_Layer: 0
   m_Name: Character_Ghost_01 1
   m_TagString: Untagged
@@ -1281,10 +1283,10 @@ Animator:
   m_GameObject: {fileID: 127002}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b69174d668ba02d44b14a084b217670a, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7799f038fe1139b48b4d91190aaee27b, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_AnimatePhysics: 0
@@ -1338,6 +1340,31 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &1651612816134025806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c53404b3e36ffc4d8a2ab142a21e2f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Hero
+  state: 0
+--- !u!114 &-4628593474198100402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df87b38ea2f10a42bee6160b46d67a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharAnimation
 --- !u!1 &127280
 GameObject:
   m_ObjectHideFlags: 0

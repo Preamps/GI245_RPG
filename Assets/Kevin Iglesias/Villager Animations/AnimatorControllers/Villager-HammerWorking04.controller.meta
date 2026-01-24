@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: be4fccade522a014d9055dc6fd8f606a
+timeCreated: 1568308048
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162341
+  packageName: Mega Animations Pack
+  packageVersion: 1.7.3
+  assetPath: Assets/Kevin Iglesias/Villager Animations/AnimatorControllers/Villager-HammerWorking04.controller
+  uploadId: 719110

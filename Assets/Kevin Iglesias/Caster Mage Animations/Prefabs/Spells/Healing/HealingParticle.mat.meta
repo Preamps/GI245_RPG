@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 4a108905e4b428e43953d8eb23b1cf26
+timeCreated: 1570994003
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162341
+  packageName: Mega Animations Pack
+  packageVersion: 1.7.3
+  assetPath: Assets/Kevin Iglesias/Caster Mage Animations/Prefabs/Spells/Healing/HealingParticle.mat
+  uploadId: 719110

@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: a613333c6c0b9eb49a6318e246ed7158
+timeCreated: 1571218708
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162341
+  packageName: Mega Animations Pack
+  packageVersion: 1.7.3
+  assetPath: Assets/Kevin Iglesias/Caster Mage Animations/Scripts/CastSpells.cs
+  uploadId: 719110

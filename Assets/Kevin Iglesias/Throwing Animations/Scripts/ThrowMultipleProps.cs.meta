@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 38f019c20615dbb4c8489a8f9489b610
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162341
+  packageName: Mega Animations Pack
+  packageVersion: 1.7.3
+  assetPath: Assets/Kevin Iglesias/Throwing Animations/Scripts/ThrowMultipleProps.cs
+  uploadId: 719110

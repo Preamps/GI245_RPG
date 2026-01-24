@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 2e9e85637fced4145964c3881d1024ca
+timeCreated: 1571912149
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162341
+  packageName: Mega Animations Pack
+  packageVersion: 1.7.3
+  assetPath: Assets/Kevin Iglesias/Caster Mage Animations/Scripts/ThrowHealing.cs
+  uploadId: 719110

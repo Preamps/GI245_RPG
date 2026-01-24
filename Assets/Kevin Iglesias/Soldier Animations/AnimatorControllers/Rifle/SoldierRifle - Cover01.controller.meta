@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 33e8835ff2942c14085f3af106fee629
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162341
+  packageName: Mega Animations Pack
+  packageVersion: 1.7.3
+  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Rifle/SoldierRifle
+    - Cover01.controller
+  uploadId: 719110

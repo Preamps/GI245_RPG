@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 70326ad9fe52b57409e2fed01fe9620b
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162341
+  packageName: Mega Animations Pack
+  packageVersion: 1.7.3
+  assetPath: Assets/Kevin Iglesias/Soldier Animations/AnimatorControllers/Bazooka/SoldierBazooka
+    - Crawling01 - TakeDamage01.controller
+  uploadId: 719110

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 55c677ee012973e4dad0e57b27fed2c2
+timeCreated: 1571865243
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162341
+  packageName: Mega Animations Pack
+  packageVersion: 1.7.3
+  assetPath: Assets/Kevin Iglesias/Caster Mage Animations/Prefabs/Spells/Nova/RedNova.mat
+  uploadId: 719110

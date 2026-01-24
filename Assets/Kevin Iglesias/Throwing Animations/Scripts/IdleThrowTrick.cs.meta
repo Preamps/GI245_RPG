@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1a12c40186534d14fa0f20bf641df7a8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 162341
+  packageName: Mega Animations Pack
+  packageVersion: 1.7.3
+  assetPath: Assets/Kevin Iglesias/Throwing Animations/Scripts/IdleThrowTrick.cs
+  uploadId: 719110
