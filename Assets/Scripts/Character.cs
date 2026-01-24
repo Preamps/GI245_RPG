@@ -11,8 +11,8 @@ public abstract class Character : MonoBehaviour
 {
     protected NavMeshAgent navAgent;
 
-    protected Animation anim;
-    public Animation Anim { get { return anim; } }
+    protected Animator anim;
+    public Animator Anim { get { return anim; } }
 
     [SerializeField]
     protected CharState state;
@@ -21,7 +21,7 @@ public abstract class Character : MonoBehaviour
     private void Awake()
     {
         navAgent = GetComponent<NavMeshAgent>();
-        anim = GetComponent<Animation>();
+        anim = GetComponent<Animator>();
     }
     public void SetState(CharState s)
     {

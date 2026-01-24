@@ -28,7 +28,7 @@ public class CharAnimation : MonoBehaviour
                 break;
             case CharState.Walk:
                 c.Anim.SetBool("IsWalk", true);
+                break;
         }
     }
-
 }
