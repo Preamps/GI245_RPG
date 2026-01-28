@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2f878c51528a70f4f95b232e84a47107
+guid: 5ba57b7af5d9f67429d5668da3018d5f
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -141,7 +141,7 @@ ModelImporter:
     400132: RightHandIK
     400134: RightHandProp
     400136: root
-    7400000: Archer@GetArrow03
+    7400000: Archer@Death01
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -172,10 +172,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Archer@GetArrow03
-      takeName: Archer@GetArrow03
+      name: Archer@Death01
+      takeName: Archer@Death01
       firstFrame: 0
-      lastFrame: 30
+      lastFrame: 39
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

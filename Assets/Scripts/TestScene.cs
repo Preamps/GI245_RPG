@@ -15,7 +15,7 @@ public class TestScene : MonoBehaviour
     {
         for (int i = 0; i < characters.Length; i++)
         {
-            characters[i].SetState(CharState.Idle);
+            characters[i].SetState(CharState.Walk);
         }
     }
     public void SetAttack()
