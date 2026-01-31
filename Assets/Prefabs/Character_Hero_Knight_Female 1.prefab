@@ -1220,7 +1220,7 @@ GameObject:
   - component: {fileID: -7224079334573338513}
   - component: {fileID: 9001485504436512763}
   - component: {fileID: 6178344494434156936}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Character_Hero_Knight_Female 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
