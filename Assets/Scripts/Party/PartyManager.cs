@@ -23,9 +23,15 @@ public class PartyManager : MonoBehaviour
         foreach (Character c in members)
         {
 
-            c.charInit(VFXManager.instance);
+            c.charInit(VFXManager.instance,UIManager.instance);
             c.MagicSkills.Add(new Magic(0, "Fireball", 10f, 30, 3f, 1f, 0, 1));
         }
+        SelectSingleHero(0);
+
+        members[0].MagicSkills.Add(new Magic(0,"Power Glow", 10f, 20, 3f, 1f, 2, 2));
+        members[1].MagicSkills.Add(new Magic(0,"Fire Ball", 10f, 35, 3f, 4f, 0, 1));
+        UIManager.instance.ShowMagicToggle();
+
     }
 
     // Update is called once per frame
@@ -36,5 +42,26 @@ public class PartyManager : MonoBehaviour
             selectChars[0].IsMagicMode = true;
             selectChars[0].CurMagicCast = selectChars[0].MagicSkills[0];
         }
+    }
+
+    public void SelectSingleHero(int i)
+    {
+        foreach (Character c in selectChars)
+            c.ToggleRingSelection(false);
+
+        selectChars.Clear();
+
+        selectChars.Add(members[i]);
+        selectChars[0].ToggleRingSelection(true);
+    }
+
+    public void HeroSelectMagicSkills(int i)
+    {
+        if (selectChars.Count <= 0 )
+            return;
+
+        selectChars[0].IsMagicMode = true;
+        selectChars[0].CurMagicCast = selectChars[0].MagicSkills[i];
+
     }
 }
