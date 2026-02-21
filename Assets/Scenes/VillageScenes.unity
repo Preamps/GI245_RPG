@@ -3608,7 +3608,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -66.078735, y: 0}
+  m_AnchoredPosition: {x: -66.07861, y: 0}
   m_SizeDelta: {x: 132.1494, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &929976155
@@ -4899,6 +4899,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::VFXManager
   doubleringMarker: {fileID: 6044037666520248651, guid: f386c67f8639db34aaa22d034664b043, type: 3}
+  magicVFX:
+  - {fileID: 1722081097931586, guid: 67ff1be89263f4c4da559492f178f76e, type: 3}
+  - {fileID: 1236643204216662, guid: 12b08541316b10743b636da8519bf449, type: 3}
+  - {fileID: 1739096776086156, guid: 653f5c31ff37bd14f8bf9a5e54e93aee, type: 3}
 --- !u!114 &1210438478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7939,6 +7943,17 @@ MonoBehaviour:
   attackCoolDown: 2
   attackTimer: 0
   findingRange: 20
+  magicSkills: []
+  curMagicCast:
+    id: 0
+    name: 
+    range: 0
+    power: 0
+    loadTime: 0
+    shootTime: 0
+    loadId: 0
+    shootId: 0
+  isMagicMode: 0
 --- !u!4 &1897080483 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 474098, guid: f5a20252c46e21847b9b9dbd97f92f7f, type: 3}
