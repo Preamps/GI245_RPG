@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -79,7 +79,15 @@ public class UIManager : MonoBehaviour
 
     public void IsOnCurToggleMagic(bool flag)
     {
-        toggleMagic[curToggleMagicID].isOn = flag;
+        // เช็คว่า ID ไม่ใช่ -1 และไม่เกินขนาดของ Array ที่มีอยู่
+        if (curToggleMagicID >= 0 && curToggleMagicID < toggleMagic.Length)
+        {
+            toggleMagic[curToggleMagicID].isOn = flag;
+        }
+        else
+        {
+            Debug.LogWarning("ยังไม่ได้เลือก Magic ID หรือ ID อยู่นอกขอบเขต!");
+        }
     }
 
 

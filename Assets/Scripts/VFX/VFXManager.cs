@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class VFXManager : MonoBehaviour
 {
@@ -31,10 +31,15 @@ public class VFXManager : MonoBehaviour
     public void LoadMagic(int id, Vector3 posA, float time)
     {
         //load magic 
-        if (magicVFX[id] == null )
+        if (id < 0 || id >= magicVFX.Length || magicVFX[id] == null)
+        {
+            Debug.LogWarning($"VFX Index {id} ไม่มีอยู่ในระบบ! เช็คจำนวนใน Inspector ด้วยครับ");
             return;
+        }
 
-        GameObject objLoad = Instantiate(MagicVFX[id], posA, Quaternion.identity);
+        Vector3 offsetPos = posA + new Vector3(0, 1.2f, 0);
+
+        GameObject objLoad = Instantiate(MagicVFX[id], offsetPos, Quaternion.identity);
         Destroy(objLoad,time);
     }
 

@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 using System.Collections.Generic;
@@ -235,21 +235,29 @@ public abstract class Character : MonoBehaviour
     {
         Character target = curCharTarget.GetComponent<Character>();
 
-        if (target == null)
+        // โค้ดเดิม: if (target == null) ซึ่งจะทำให้ Error ถ้า target มีตัวตน
+        if (target != null)
             target.ReceiveDamage(magic.Power);
     }
 
 
     private IEnumerator ShootMagicCast(Magic curMagicCast)
     {
-        if (vfxManager != null)
+        if (vfxManager != null && curCharTarget != null)
+        {
+            // ใช้ตำแหน่งกลางตัวของผู้ร่าย และ กลางตัวของเป้าหมาย
+            Vector3 startPos = GetBodyCenter();
+            Vector3 targetPos = curCharTarget.GetBodyCenter();
+
             vfxManager.ShootMagic(curMagicCast.ShootID,
-                                    transform.position,
-                                    curCharTarget.transform.position,
-                                    curMagicCast.ShootTime);
+                                 startPos,
+                                 targetPos,
+                                 curMagicCast.ShootTime);
+        }
+
         yield return new WaitForSeconds(curMagicCast.ShootTime);
 
-        //cast logic
+        // Cast logic
         MagicCastLogic(curMagicCast);
         isMagicMode = false;
 
@@ -261,12 +269,17 @@ public abstract class Character : MonoBehaviour
     private IEnumerator LoadMagicCast(Magic curMagicCast)
     {
         if (vfxManager != null)
-            vfxManager.LoadMagic(curMagicCast.LoadID,
-                                    transform.position,
-                                    curMagicCast.LoadTime);
-        yield return new WaitForSeconds(curMagicCast.ShootTime);
+    {
+        // ให้ Effect ชาร์จพลังเกิดที่ช่วงตัว
+        vfxManager.LoadMagic(curMagicCast.LoadID,
+                            GetBodyCenter(), 
+                            curMagicCast.LoadTime);
+    }
+    
+    // รอตามเวลา LoadTime ก่อนจะยิง (เปลี่ยนจาก ShootTime เป็น LoadTime เพื่อความถูกต้อง)
+    yield return new WaitForSeconds(curMagicCast.LoadTime);
 
-        StartCoroutine(ShootMagicCast(curMagicCast));
+    StartCoroutine(ShootMagicCast(curMagicCast));
     }
 
 
@@ -299,7 +312,11 @@ public abstract class Character : MonoBehaviour
             MagicCast(curMagicCast);
         }
     }
+    public Vector3 GetBodyCenter()
+    {
+        return transform.position + Vector3.up * 1.2f;
+    }
 
-    
+
 
 }//end class
