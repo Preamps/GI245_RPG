@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor.Search;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -15,6 +16,18 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private int curToggleMagicID = -1;
+
+    [SerializeField]
+    private GameObject blackImage;
+
+    [SerializeField]
+    private GameObject inventoryPanel;
+
+    [SerializeField]
+    private GameObject itemUIPrefab;
+
+    [SerializeField]
+    private GameObject[] slots;
 
 
     public static UIManager instance;
@@ -90,7 +103,50 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    public void toggleInventoryPanel()
+    {
+        if (!inventoryPanel.activeInHierarchy)
+        {
+            inventoryPanel.SetActive(true);
+            blackImage.SetActive(true);
+            ShowInventory();
+        }
+        else
+        {
+            inventoryPanel.SetActive(false);
+            blackImage.SetActive(false);
+            clearInventory();
+        }
+    }
 
+    public void clearInventory()
+    {
+        for (int i = 0; i <slots.Length; i++)
+        {
+            if (slots[i] .transform.childCount > 0)
+            {
+                Transform child = slots[i].transform.GetChild(0);
+                Destroy(child.gameObject);
+            }
+        }
+    }
+
+    public void ShowInventory()
+    {
+        if (PartyManager.instance.SelectChars.Count <=0 )
+            return;
+
+        Character hero = PartyManager.instance.SelectChars[0];
+
+        for (int i = 0; i < hero.InventoryItems.Length; i++)
+        {
+            if (hero.InventoryItems[i] != null)
+            {
+                GameObject itemObj = Instantiate(itemUIPrefab, slots[i].transform);
+                itemObj.GetComponent<Image>().sprite = hero.InventoryItems[i].Icon;
+            }
+        }
+    }
 
 }
 

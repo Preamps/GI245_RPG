@@ -4,8 +4,8 @@ public class InventoryManager : MonoBehaviour
 {
     [SerializeField]
     private GameObject[] itemPrefabs;
-    public GameObject itemPrefab
-    {  get { return itemPrefab; } set { itemPrefab = value; } }
+    public GameObject[] ItemPrefabs
+    { get { return itemPrefabs; } set { itemPrefabs = value; } }
 
     [SerializeField]
     private ItemData[] itemData;
@@ -14,12 +14,12 @@ public class InventoryManager : MonoBehaviour
 
     public const int MAXSLOT = 16;
 
-    public static InventoryManager Instance;
+    public static InventoryManager instance;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Instance = this;
+        instance = this;
     }
 
     // Update is called once per frame
@@ -41,6 +41,6 @@ public class InventoryManager : MonoBehaviour
             }
         }
         Debug.Log("Inventory Full");
-            return false;
+        return false;
     }
 }

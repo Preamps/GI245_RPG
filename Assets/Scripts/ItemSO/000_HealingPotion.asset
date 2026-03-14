@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 000_HealingPotion
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   id: 0
-  itemName: 
+  itemName: Healing potion
   type: 0
   icon: {fileID: 0}
-  power: 0
+  power: 15

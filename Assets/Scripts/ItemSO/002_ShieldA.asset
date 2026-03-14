@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bbf588c448e94419dcf4923164b571, type: 3}
   m_Name: 002_ShieldA
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  id: 0
-  itemName: 
-  type: 0
+  id: 2
+  itemName: Shield A
+  type: 1
   icon: {fileID: 0}
   power: 0
