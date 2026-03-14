@@ -65,7 +65,7 @@ public class UIManager : MonoBehaviour
             toggleMagic[i].interactable = true;
             toggleMagic[i].isOn = false;
             toggleMagic[i].GetComponentInChildren<Text>().text = hero.MagicSkills[i].Name;
-
+            toggleMagic[i].targetGraphic.GetComponent<Image>().sprite = hero.MagicSkills[i].Icon;
         }
 
     }
