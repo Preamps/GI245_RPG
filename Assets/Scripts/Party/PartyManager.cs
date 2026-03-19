@@ -24,6 +24,7 @@ public class PartyManager : MonoBehaviour
         {
             c.charInit(VFXManager.instance,UIManager.instance);
         }
+
         SelectSingleHero(0);
 
         members[0].MagicSkills.Add(new Magic(VFXManager.instance.MagicData[0]));

@@ -244,8 +244,10 @@ public abstract class Character : MonoBehaviour
 
     public void charInit (VFXManager vfxM,UIManager uiM)
     {
-       vfxManager = vfxM;
+        vfxManager = vfxM;
         uiManager = uiM;
+
+        inventoryItems = new Item[16];
     }
 
     protected void MagicCastLogic(Magic magic)
@@ -333,14 +335,5 @@ public abstract class Character : MonoBehaviour
     {
         return transform.position + Vector3.up * 1.2f;
     }
-
-    public void CharIntt(VFXManager vfxM, UIManager uIM)
-    {
-        vfxManager = vfxM;
-        uiManager = uIM;
-
-        inventoryItems = new Item[16];
-    }
-
 
 }//end class

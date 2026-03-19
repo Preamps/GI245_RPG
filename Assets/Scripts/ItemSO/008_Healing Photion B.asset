@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71bbf588c448e94419dcf4923164b571, type: 3}
-  m_Name: 001_SwordA
+  m_Name: 008_Healing Photion B
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  id: 1
-  itemName: Sword A
-  type: 2
-  icon: {fileID: 0}
+  id: 0
+  itemName: Heling Potion B
+  type: 0
+  icon: {fileID: 21300000, guid: 630ebf9ab3d6de04ca0747ea61316c10, type: 3}
   power: 20

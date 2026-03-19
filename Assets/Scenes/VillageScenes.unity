@@ -7063,9 +7063,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
   itemPrefabs: []
   itemData:
-  - {fileID: 11400000, guid: 93d80713c5d85104682f44908a59714d, type: 2}
-  - {fileID: 11400000, guid: 0939c1e82df10414fa0d51acc5f315e4, type: 2}
-  - {fileID: 11400000, guid: 3bbbec9b8c9ce264ebfe8e6b7a389ca1, type: 2}
+  - {fileID: 11400000, guid: 5dde83e05ea0e5c4d8b0893925efe6fe, type: 2}
+  - {fileID: 11400000, guid: b82fca51b2e02984099240e9bcc47cbe, type: 2}
+  - {fileID: 11400000, guid: b1c3b3496afcbc04ea6d3296dd063aa9, type: 2}
+  - {fileID: 11400000, guid: b83d19a1e476202439f6b70194815cc0, type: 2}
+  - {fileID: 11400000, guid: 3a341be31b6c67b419943941fda886db, type: 2}
+  - {fileID: 11400000, guid: ff3ab007fb20a534983c7782803b9a6d, type: 2}
+  - {fileID: 11400000, guid: 2849bb1ab38125243989f47b50e493be, type: 2}
+  - {fileID: 11400000, guid: e7c51dbe921b4a24a961d65838b7df58, type: 2}
+  - {fileID: 11400000, guid: bbf8093ac369d8648b56d3328b3ca415, type: 2}
+  - {fileID: 11400000, guid: 49654bc8281826a459c474ef5b268f01, type: 2}
 --- !u!1 &1263830269
 GameObject:
   m_ObjectHideFlags: 0
@@ -11560,13 +11567,13 @@ MonoBehaviour:
   inventoryItems: []
   mainWeapon:
     id: 0
-    name: 
+    itemname: 
     type: 0
     icon: {fileID: 0}
     power: 0
   shield:
     id: 0
-    name: 
+    itemname: 
     type: 0
     icon: {fileID: 0}
     power: 0

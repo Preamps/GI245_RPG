@@ -2,7 +2,7 @@ using UnityEngine;
 
 public enum ItemType
 {
-    consumable,
+    Consumable,
     Equipmet,
     Weapon,
     Ammo,
@@ -17,8 +17,8 @@ public class Item
     public int ID {  get { return id; } }
 
     [SerializeField]
-    private string name;
-    public string Name { get { return name; } }
+    private string itemname;
+    public string ItemName { get { return itemname; } }
 
     [SerializeField]
     private ItemType type;
@@ -36,7 +36,7 @@ public class Item
     public Item(ItemData data)
     {
         id = data.id;
-        name = data.name;
+        itemname = data.name;
         type = data.type;
         icon = data.icon;
         power = data.power;

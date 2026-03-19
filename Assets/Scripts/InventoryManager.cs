@@ -10,16 +10,21 @@ public class InventoryManager : MonoBehaviour
     [SerializeField]
     private ItemData[] itemData;
     public ItemData[] ItemData
-        { get { return itemData; }set { itemData = value; } }
+    { get { return itemData; } set { itemData = value; } }
 
     public const int MAXSLOT = 16;
 
     public static InventoryManager instance;
 
+    private void Awake()
+    {
+        instance = this;
+    }
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        instance = this;
+
     }
 
     // Update is called once per frame
