@@ -6818,11 +6818,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3533740195434125157, guid: a0bee02f1e4063347a362c3904c47527, type: 3}
   m_PrefabInstance: {fileID: 1167216831}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1188770649 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6044037666520248651, guid: f386c67f8639db34aaa22d034664b043, type: 3}
-  m_PrefabInstance: {fileID: 1967506364}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1188770653 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6900948150650273093, guid: f386c67f8639db34aaa22d034664b043, type: 3}
@@ -6963,6 +6958,7 @@ GameObject:
   - component: {fileID: 1210438477}
   - component: {fileID: 1210438478}
   - component: {fileID: 1210438479}
+  - component: {fileID: 1210438480}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -7061,7 +7057,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc005151469d53541b17918ae7505b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InventoryManager
-  itemPrefabs: []
+  itemPrefabs:
+  - {fileID: 2183001951008068311, guid: 7b382c9af4202c0409eb552088cbc882, type: 3}
+  - {fileID: 157152, guid: 52f258e506977f7428affa5eafdd673a, type: 3}
   itemData:
   - {fileID: 11400000, guid: 5dde83e05ea0e5c4d8b0893925efe6fe, type: 2}
   - {fileID: 11400000, guid: b82fca51b2e02984099240e9bcc47cbe, type: 2}
@@ -7073,6 +7071,20 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e7c51dbe921b4a24a961d65838b7df58, type: 2}
   - {fileID: 11400000, guid: bbf8093ac369d8648b56d3328b3ca415, type: 2}
   - {fileID: 11400000, guid: 49654bc8281826a459c474ef5b268f01, type: 2}
+--- !u!114 &1210438480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1210438473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97845d85b26486245a3681f65fe6e22b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
+  monsters:
+  - {fileID: 1897080488}
 --- !u!1 &1263830269
 GameObject:
   m_ObjectHideFlags: 0
@@ -9015,21 +9027,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8072018023069585559, guid: f5a20252c46e21847b9b9dbd97f92f7f, type: 3}
-      propertyPath: ringSelection
-      value: 
-      objectReference: {fileID: 1188770649}
     m_RemovedComponents:
-    - {fileID: 8072018023069585559, guid: f5a20252c46e21847b9b9dbd97f92f7f, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 474098, guid: f5a20252c46e21847b9b9dbd97f92f7f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1188770653}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 124030, guid: f5a20252c46e21847b9b9dbd97f92f7f, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 1897080479}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5a20252c46e21847b9b9dbd97f92f7f, type: 3}
 --- !u!1001 &1486856368
 PrefabInstance:
@@ -11526,62 +11531,22 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 335859008}
   m_SourcePrefab: {fileID: 100100000, guid: 068cd5e8c567c864e8f9d3809f8b3cfd, type: 3}
---- !u!1 &1897080470 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 124030, guid: f5a20252c46e21847b9b9dbd97f92f7f, type: 3}
-  m_PrefabInstance: {fileID: 1470436752}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1897080479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1897080470}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61282ce811b2beb46854cb83676861a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  state: 0
-  ringSelection: {fileID: 1188770649}
-  curHP: 10
-  curCharTarget: {fileID: 0}
-  attackRange: 2
-  attackDamage: 3
-  attackCoolDown: 2
-  attackTimer: 0
-  findingRange: 20
-  magicSkills: []
-  curMagicCast:
-    id: 0
-    name: 
-    icon: {fileID: 0}
-    range: 0
-    power: 0
-    loadTime: 0
-    shootTime: 0
-    loadId: 0
-    shootId: 0
-  isMagicMode: 0
-  inventoryItems: []
-  mainWeapon:
-    id: 0
-    itemname: 
-    type: 0
-    icon: {fileID: 0}
-    power: 0
-  shield:
-    id: 0
-    itemname: 
-    type: 0
-    icon: {fileID: 0}
-    power: 0
 --- !u!4 &1897080483 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 474098, guid: f5a20252c46e21847b9b9dbd97f92f7f, type: 3}
   m_PrefabInstance: {fileID: 1470436752}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1897080488 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1740738457653449441, guid: f5a20252c46e21847b9b9dbd97f92f7f, type: 3}
+  m_PrefabInstance: {fileID: 1470436752}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61282ce811b2beb46854cb83676861a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
 --- !u!1 &1906707616
 GameObject:
   m_ObjectHideFlags: 0
