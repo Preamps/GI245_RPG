@@ -48,4 +48,19 @@ public class InventoryManager : MonoBehaviour
         Debug.Log("Inventory Full");
         return false;
     }
+
+    public void SaveItemInBag(int index, Item item)
+    {
+        if (PartyManager.instance.SelectChars.Count == 0)
+            return;
+
+        PartyManager.instance.SelectChars[0].InventoryItems[index] = item;
+    }
+    public void RemoveItemInBag(int index)
+    {
+        if (PartyManager.instance.SelectChars.Count == 0  )
+            return;
+
+        PartyManager.instance.SelectChars[0].InventoryItems[index] = null;
+    }
 }
