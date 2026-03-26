@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -90,7 +90,17 @@ public class InventoryManager : MonoBehaviour
         for (int i = 0; i < items.Length; i++)
         {
             if (items[i] != null)
-                SpawnDropItem(items[i], pos);
+            {
+                // สุ่มตำแหน่งรอบๆ จุด pos ในรัศมีไม่เกิน 1 เมตร
+                Vector3 randomOffset = Random.insideUnitSphere * 1f;
+
+                // หากต้องการให้ไอเทมกระจายแค่ในแนวราบ (แกน X และ Z) ให้เซต y เป็น 0
+                randomOffset.y = 0;
+
+                Vector3 finalPos = pos + randomOffset;
+
+                SpawnDropItem(items[i], finalPos);
+            }
         }
     }
 }
