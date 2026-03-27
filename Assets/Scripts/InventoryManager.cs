@@ -103,4 +103,17 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
+
+    public void DrinkConsumableItem(Item item, int slotId)
+    {
+        string s = string.Format("Drink: {0}", item.ItemName);
+        Debug.Log(s);
+
+        if (PartyManager.instance.SelectChars.Count > 0)
+        {
+            PartyManager.instance.SelectChars[0].Recover(item.Power);
+            RemoveItemInBag(slotId);
+        }
+    }
+
 }
