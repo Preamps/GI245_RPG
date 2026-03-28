@@ -1235,6 +1235,7 @@ GameObject:
   - component: {fileID: -7002857828398496672}
   - component: {fileID: 1651612816134025806}
   - component: {fileID: -4628593474198100402}
+  - component: {fileID: 6848924065522659411}
   m_Layer: 6
   m_Name: Character_Ghost_01 1
   m_TagString: Untagged
@@ -1357,12 +1358,43 @@ MonoBehaviour:
   state: 0
   ringSelection: {fileID: 5553536209909629323}
   curHP: 10
+  maxHP: 100
   curCharTarget: {fileID: 0}
   attackRange: 2
   attackDamage: 3
   attackCoolDown: 2
   attackTimer: 0
   findingRange: 20
+  magicSkills: []
+  curMagicCast:
+    id: 0
+    name: 
+    icon: {fileID: 0}
+    range: 0
+    power: 0
+    loadTime: 0
+    shootTime: 0
+    loadId: 0
+    shootId: 0
+  isMagicMode: 0
+  inventoryItems: []
+  mainWeapon:
+    id: 0
+    itemname: 
+    type: 0
+    icon: {fileID: 0}
+    power: 0
+    prefabID: 0
+  shield:
+    id: 0
+    itemname: 
+    type: 0
+    icon: {fileID: 0}
+    power: 0
+    prefabID: 0
+  shieldHand: {fileID: 483904}
+  shieldObj: {fileID: 0}
+  defensPower: 0
 --- !u!114 &-4628593474198100402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1375,6 +1407,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df87b38ea2f10a42bee6160b46d67a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharAnimation
+--- !u!114 &6848924065522659411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06137c2e46f82f41ba7fd251de07a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackAI
+  curEnemy: {fileID: 0}
 --- !u!1 &127280
 GameObject:
   m_ObjectHideFlags: 0

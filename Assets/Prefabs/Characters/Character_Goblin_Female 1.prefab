@@ -994,6 +994,7 @@ GameObject:
   - component: {fileID: -7816991760187630808}
   - component: {fileID: 7380192594533667622}
   - component: {fileID: 1740738457653449441}
+  - component: {fileID: 581391427073770034}
   m_Layer: 6
   m_Name: Character_Goblin_Female 1
   m_TagString: Untagged
@@ -1127,6 +1128,7 @@ MonoBehaviour:
   state: 0
   ringSelection: {fileID: 0}
   curHP: 10
+  maxHP: 100
   curCharTarget: {fileID: 0}
   attackRange: 2
   attackDamage: 3
@@ -1152,12 +1154,30 @@ MonoBehaviour:
     type: 0
     icon: {fileID: 0}
     power: 0
+    prefabID: 0
   shield:
     id: 0
     itemname: 
     type: 0
     icon: {fileID: 0}
     power: 0
+    prefabID: 0
+  shieldHand: {fileID: 477274}
+  shieldObj: {fileID: 0}
+  defensPower: 0
+--- !u!114 &581391427073770034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d06137c2e46f82f41ba7fd251de07a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AttackAI
+  curEnemy: {fileID: 0}
 --- !u!1 &126850
 GameObject:
   m_ObjectHideFlags: 0

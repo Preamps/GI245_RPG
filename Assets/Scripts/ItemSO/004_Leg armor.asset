@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71bbf588c448e94419dcf4923164b571, type: 3}
-  m_Name: 006_Bow A 2
+  m_Name: 004_Leg armor
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  id: 5
-  itemName: Bow A
-  type: 2
-  icon: {fileID: 21300000, guid: 17a074b501a85c442ab7492808a1ca4a, type: 3}
-  power: 30
+  id: 4
+  itemName: Leg armor
+  type: 0
+  icon: {fileID: 21300000, guid: 180379f4434312f49b4e7215c5fd3807, type: 3}
+  power: 0
+  prefabID: 0
