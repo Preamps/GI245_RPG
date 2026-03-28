@@ -15,7 +15,10 @@ public class InventorySlot : MonoBehaviour,IDropHandler
 
     [SerializeField]
     private InventoryManager inventoryManager;
-
+    void Start()
+    {
+        inventoryManager = InventoryManager.instance;
+    }
     public void OnDrop(PointerEventData eventData)
     {
         GameObject objA = eventData.pointerDrag;
@@ -32,7 +35,7 @@ public class InventorySlot : MonoBehaviour,IDropHandler
         {
             GameObject objB = transform.GetChild(0).gameObject;
             ItemDrag itemDragB = objB.GetComponent<ItemDrag>();
-
+            
             if (slotA.ItemType == ItemType.Shield)
             {
                 if (itemDragB.Item.Type != slotA.ItemType)

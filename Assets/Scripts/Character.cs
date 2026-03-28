@@ -92,7 +92,7 @@ public abstract class Character : MonoBehaviour
     protected GameObject shieldObj;
 
     [SerializeField]
-    protected int defensPower = 0;
+    protected int defensePower = 0;
 
     protected VFXManager vfxManager;
     protected UIManager uiManager;
@@ -234,12 +234,12 @@ public abstract class Character : MonoBehaviour
         if (curHP <= 0 || state == CharState.Die)
             return;
 
-        int damageAfter = damage - defensPower;
+        int damageAfter = damage - defensePower;
         
         if (damageAfter < 0)
             damageAfter = 0;
 
-        curHP -= damage;
+        curHP -= damageAfter;
         
         if (curHP <= 0 )
         { 
@@ -374,14 +374,14 @@ public abstract class Character : MonoBehaviour
         shieldObj.transform.localPosition = new Vector3(-8.5f, -4f, 3f);
         shieldObj.transform.Rotate(-90f, 0f, 180f, Space.Self);
 
-        defensPower += item.Power;
+        defensePower += item.Power;
         shield = item;
     }
     public void UnEquipShield()
     {
         if (shield != null)
         {
-            defensPower -= shield.Power;
+            defensePower -= shield.Power;
             shield = null;
             Destroy(shieldObj);
         }

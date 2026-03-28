@@ -5,7 +5,7 @@ public enum ItemType
     Consumable,
     Equipmet,
     Shield,
-    Aemor,
+    Armor,
     Weapon,
     Ammo,
     Quest,

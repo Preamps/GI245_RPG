@@ -55,6 +55,7 @@ public class InventoryManager : MonoBehaviour
             return;
 
         PartyManager.instance.SelectChars[0].InventoryItems[index] = item;
+
         switch (index)
         {
             case 16:
