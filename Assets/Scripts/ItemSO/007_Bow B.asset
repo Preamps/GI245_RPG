@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   id: 7
   itemName: Bow A
-  type: 2
+  type: 4
   icon: {fileID: 21300000, guid: 17a074b501a85c442ab7492808a1ca4a, type: 3}
   power: 30
   prefabID: 0
