@@ -30,13 +30,23 @@ public class InventorySlot : MonoBehaviour,IDropHandler
             if(itemDragA.Item.Type != itemType)
                 return;
         }
-  
+        else if (itemType == ItemType.Weapon)
+        {
+            if (itemDragA.Item.Type != itemType)
+                return;
+        }
+
         if (transform.childCount > 0)
         {
             GameObject objB = transform.GetChild(0).gameObject;
             ItemDrag itemDragB = objB.GetComponent<ItemDrag>();
             
             if (slotA.ItemType == ItemType.Shield)
+            {
+                if (itemDragB.Item.Type != slotA.ItemType)
+                    return;
+            }
+            else if (slotA.ItemType == ItemType.Weapon)
             {
                 if (itemDragB.Item.Type != slotA.ItemType)
                     return;

@@ -38,6 +38,7 @@ public class PartyManager : MonoBehaviour
         InventoryManager.instance.AddItem(members[1], 1);//Sword
         InventoryManager.instance.AddItem(members[1], 2);//Shield A
         InventoryManager.instance.AddItem(members[1], 3);//Shield B
+        InventoryManager.instance.AddItem(members[1], 4);//Shield B
 
         UIManager.instance.ShowMagicToggle();
     }
