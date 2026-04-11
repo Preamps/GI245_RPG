@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee1c4c1d4b5199b4b9798072828001e8, type: 3}
+  m_Name: 00_GetMePotion
+  m_EditorClassIdentifier: Assembly-CSharp::QuestData
+  questId: 0
+  type: 0
+  status: 0
+  questName: Get Me a Potion
+  questDetail: Gi ve Ben abotle of blue health potion.
+  questItemId: 0
+  questDialogue:
+  - Hello adventurers. How are you?
+  - Can i ask you something?
+  - I neet a blue health potion. Could you give me?
+  answerNext:
+  - Hi, nice to meet you.
+  - Go ahead,I'm listening.
+  answerAccept: Yes. I shall find it for you.
+  answerReject: Sorry. I couldn't help you.
+  rewardItemId: 4
+  rewardExp: 150
+  questionInProgress: Have you gotten any blue potion?
+  answerFinish: Here it is.
+  answerNotFionish: Not yrt, please wait.

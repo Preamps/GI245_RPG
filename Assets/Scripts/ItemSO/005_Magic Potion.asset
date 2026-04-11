@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71bbf588c448e94419dcf4923164b571, type: 3}
-  m_Name: 005_Body Armor A
+  m_Name: 005_Magic Potion
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
   id: 5
-  itemName: Body Armor A
-  type: 3
-  icon: {fileID: 21300000, guid: 9714e3567cdcc2e40b2f41f4637748ad, type: 3}
-  power: 0
-  prefabID: 0
+  itemName: Magic Potion
+  type: 0
+  icon: {fileID: 21300000, guid: d50dc32bb8aa09a4b90d2f980703adff, type: 3}
+  power: 20
+  prefabID: 5

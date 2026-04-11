@@ -7,7 +7,7 @@ using System.Security.Permissions;
 public enum CharState
 {
     Idle, Walk,WalkToEnemy, Attack,
-    WalkToMagicCast,MagicCast, Hit, Die
+    WalkToMagicCast,MagicCast, Hit, Die, walkToNPC
 }
 
 
@@ -17,6 +17,14 @@ public abstract class Character : MonoBehaviour
 
     protected Animator anim;
     public Animator Anim { get { return anim; } }
+
+    [SerializeField]
+    protected Sprite avatarPic;
+    public Sprite AvatarPic { get { return avatarPic; } }
+
+    [SerializeField]
+    protected string charName;
+    public string CharName { get { return charName; } }
 
     [SerializeField]
     protected CharState state;
@@ -419,5 +427,20 @@ public abstract class Character : MonoBehaviour
         }
     }
 
+    public void ToTalkToNPC(Character npc)
+    {
+        if (curHP <= 0 || state == CharState.Die)
+            return;
+
+        //lock target
+        curCharTarget = npc;
+
+        // start walk to enemy
+        navAgent.SetDestination(npc.transform.position);
+        navAgent.isStopped = false;
+
+        SetState(CharState.walkToNPC);
+    }
+     
 
 }//end class

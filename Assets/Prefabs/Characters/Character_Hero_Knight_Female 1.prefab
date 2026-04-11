@@ -1379,7 +1379,17 @@ MonoBehaviour:
     prefabID: 0
   shieldHand: {fileID: 479758}
   shieldObj: {fileID: 0}
-  defensPower: 0
+  defensePower: 0
+  weapon:
+    id: 0
+    itemname: 
+    type: 0
+    icon: {fileID: 0}
+    power: 0
+    prefabID: 0
+  weaponHand: {fileID: 475994}
+  weaponObj: {fileID: 0}
+  Power: 0
 --- !u!114 &6178344494434156936
 MonoBehaviour:
   m_ObjectHideFlags: 0
