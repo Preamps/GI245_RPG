@@ -11,10 +11,10 @@ public enum QuestStatus
     New,
     InProgess,
     Finish,
-    Rejetct
+    Reject
 }
 
-public class Quest : MonoBehaviour
+public class Quest
 {
     [SerializeField]
     private int questId;
@@ -73,8 +73,8 @@ public class Quest : MonoBehaviour
     public string AnswerFinish { get { return answerFinish; } }
 
     [SerializeField]
-    private string answerNotFionish;
-    public string AnswerNotFionish { get { return answerNotFionish; } }
+    private string answerNotFinish;
+    public string AnswerNotFinish { get { return answerNotFinish; } }
 
     public Quest(QuestData questData)
     {
@@ -92,7 +92,7 @@ public class Quest : MonoBehaviour
         rewardExp = questData.rewardExp;
         questionInProgress = questData.questionInProgress;
         answerFinish = questData.answerFinish;
-        answerNotFionish = questData.answerNotFionish;
+        answerNotFinish = questData.answerNotFinish;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

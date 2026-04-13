@@ -17,6 +17,6 @@ public class QuestData : ScriptableObject
     public int rewardExp;
     public string questionInProgress;
     public string answerFinish;
-    public string answerNotFionish;
+    public string answerNotFinish; 
 
 }

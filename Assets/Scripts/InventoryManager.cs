@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -134,6 +135,54 @@ public class InventoryManager : MonoBehaviour
             PartyManager.instance.SelectChars[0].Recover(item.Power);
             RemoveItemInBag(slotId);
         }
+    }
+
+    public bool CheckPartyForItem(int id)
+    {
+        Item item = new Item(itemData[id]);
+        Debug.Log(item.ItemName);
+
+        List<Character> party = PartyManager.instance.SelectChars;
+
+        foreach (Character hero in party )
+        {
+            for (int i = 0; i < hero.InventoryItems.Length; i++)
+            {
+                if (hero.InventoryItems[i] == null)
+                    continue;
+                Debug.Log(hero.InventoryItems[i].ItemName);
+
+                if (hero.InventoryItems[i].ID == id)
+                    return true;
+            }
+        }
+        return false;
+    }
+
+    public bool RemoveItemFromParty(int id)
+    {
+        Item item = new Item(itemData[id]);
+        Debug.Log("Remove: " + item.ItemName);
+
+        List<Character> party = PartyManager.instance.SelectChars;
+
+        foreach (Character hero in party)
+        {
+            for (int i = 0; i < hero.InventoryItems.Length; i++)
+            {
+                if (hero.InventoryItems[i] == null)
+                    continue;
+
+                if (hero.InventoryItems[i].ID == id)
+                {
+                    Debug.Log($"Remove: {hero.InventoryItems[i].ItemName}");
+                    hero.InventoryItems[i] = null;
+                    Debug.Log($"Remove: {hero.InventoryItems[i]}");
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
 }

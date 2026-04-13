@@ -1,4 +1,5 @@
-﻿using UnityEditor.Search;
+﻿using TMPro;
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -38,6 +39,54 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private int curSlotId;
+
+    [SerializeField]
+    private GameObject downPanel;
+
+    [SerializeField]
+    private GameObject npcDialoguePanel;
+
+    [SerializeField]
+    private Image npcImage;
+
+    [SerializeField]
+    private TMP_Text npcNameText;
+
+    [SerializeField]
+    private TMP_Text dialogueText;
+
+    [SerializeField]
+    private int index;
+
+    [SerializeField]
+    private GameObject btnNext;
+
+    [SerializeField]
+    private TMP_Text btnNextText;
+
+    [SerializeField]
+    private GameObject btnAccept;
+
+    [SerializeField]
+    private TMP_Text btnAcceptText;
+
+    [SerializeField]
+    private GameObject btnReject;
+
+    [SerializeField]
+    private TMP_Text btnRejectText;
+
+    [SerializeField]
+    private GameObject btnFinish;
+
+    [SerializeField]
+    private TMP_Text btnFinishText;
+
+    [SerializeField]
+    private GameObject btnNotFinish;
+
+    [SerializeField]
+    private TMP_Text btnNotFinishText;
 
 
     public static UIManager instance;
@@ -95,8 +144,8 @@ public class UIManager : MonoBehaviour
 
     public void SelectMagicSkill(int i)
     {
-        curToggleMagicID = i ;
-        PartyManager .instance.HeroSelectMagicSkills(i);
+        curToggleMagicID = i;
+        PartyManager.instance.HeroSelectMagicSkills(i);
 
     }
 
@@ -131,9 +180,9 @@ public class UIManager : MonoBehaviour
 
     public void clearInventory()
     {
-        for (int i = 0; i <slots.Length; i++)
+        for (int i = 0; i < slots.Length; i++)
         {
-            if (slots[i] .transform.childCount > 0)
+            if (slots[i].transform.childCount > 0)
             {
                 Transform child = slots[i].transform.GetChild(0);
                 Destroy(child.gameObject);
@@ -143,7 +192,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowInventory()
     {
-        if (PartyManager.instance.SelectChars.Count <=0 )
+        if (PartyManager.instance.SelectChars.Count <= 0)
             return;
 
         Character hero = PartyManager.instance.SelectChars[0];
@@ -172,13 +221,13 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void SetCurItemInUse(ItemDrag itemDrag,int index)
+    public void SetCurItemInUse(ItemDrag itemDrag, int index)
     {
         curItemDrag = itemDrag;
         curSlotId = index;
     }
-    
-    public void ToggleItemDialog (bool flag)
+
+    public void ToggleItemDialog(bool flag)
     {
         grayImage.SetActive(flag);
         itemDialog.SetActive(flag);
@@ -188,11 +237,153 @@ public class UIManager : MonoBehaviour
     {
         Destroy(curItemDrag.gameObject);  // ลบไอเท็มที่ถูกลากออกจาก UI
     }
-    public void ClickDrinkConsumable() 
+    public void ClickDrinkConsumable()
     {
-        InventoryManager.instance.DrinkConsumableItem(curItemDrag.Item,curSlotId);
+        InventoryManager.instance.DrinkConsumableItem(curItemDrag.Item, curSlotId);
         DeleteItemIcon();
         ToggleItemDialog(false);
     }
+
+    private void ClearDialogueBox()
+    {
+        npcImage.sprite = null;
+
+        npcNameText.text = "";
+        dialogueText.text = "";
+
+        btnNextText.text = "";
+        btnNext.SetActive(false);
+
+        btnAcceptText.text = "";
+        btnAccept.SetActive(false);
+
+        btnRejectText.text = "";
+        btnReject.SetActive(false);
+
+        btnFinishText.text = "";
+        btnFinish.SetActive(false);
+
+        btnNotFinishText.text = "";
+        btnNotFinish.SetActive(false);
+    }
+
+    private void StartQuestDialougue(Quest quest)
+    {
+        dialogueText.text = quest.QuestDialogue[index];
+
+        btnNext.SetActive(true);
+        btnNextText.text = quest.AnswerNext[index];
+
+        btnAccept.SetActive(false);
+        btnReject.SetActive(false);
+    }
+
+    private void SetupDialoguePanel(Npc npc)
+    {
+        index = 0;
+
+        npcImage.sprite = npc.AvatarPic;
+        npcNameText.text = npc.CharName;
+
+        Quest inProgressQuest = QuestManager.instance.CheckForQuest(npc, QuestStatus.InProgess);
+
+        if (inProgressQuest != null)
+        {
+            Debug.Log($"in-progress : {inProgressQuest.QuestName}");
+            dialogueText.text = inProgressQuest.QuestionInProgress;
+
+            bool hasItem = QuestManager.instance.CheckIfFinishQuest();
+            Debug.Log(hasItem);
+
+            if (hasItem)
+            {
+                btnFinishText.text = inProgressQuest.AnswerFinish;
+                btnFinish.SetActive(true);
+            }
+            else
+            {
+                btnNotFinishText.text = inProgressQuest.AnswerNotFinish;
+                btnNotFinish.SetActive(true);
+            }
+
+        }
+        else
+        {
+            Quest newQuest = QuestManager.instance.CheckForQuest(npc, QuestStatus.New);
+
+            if (newQuest != null)
+                StartQuestDialougue(newQuest);
+
+        }
+    }
+
+    private void ToggleDialogueBox(bool flag)
+    {
+        grayImage.SetActive(flag);
+        npcDialoguePanel.SetActive(flag);
+        togglePauseUnpause.isOn = flag;
+    }
+
+    public void PrepareDialogueBox(Npc npc)
+    {
+        ClearDialogueBox();
+        SetupDialoguePanel(npc);
+        ToggleDialogueBox(true);
+    }
+    public void AnswerNext()
+    {
+        index++;
+        dialogueText.text = QuestManager.instance.NextDialogue(index);
+        if (QuestManager.instance.CheckLastDialogue(index))
+        {
+            btnNext.SetActive(false);
+
+            btnAcceptText.text = QuestManager.instance.CurQuest.AnswerAccept;
+            btnAccept.SetActive(true);
+
+
+            btnRejectText.text = QuestManager.instance.CurQuest.AnswerReject;
+            btnReject.SetActive(true);
+        }
+        else
+        {
+            btnNextText.text = QuestManager.instance.CurQuest.AnswerNext[index];
+            btnNext.SetActive(true);
+
+        }
+    }
+    public void AnswerReject()
+    {
+        QuestManager.instance.RejectQuest();
+        ToggleDialogueBox(false);
+    }
+
+    public void AnswerAccept()
+    {
+        QuestManager.instance.AcceptQuest();
+        ToggleDialogueBox(false);
+    }
+
+    public void AnswerFinish()
+    {
+        Debug.Log("Finish Quest");
+        bool success = QuestManager.instance.DeliverItem();
+
+        if (success)
+        {
+            if (QuestManager.instance.NpcGiveReward())
+            {
+                Debug.Log("Quest Complete");
+                ToggleDialogueBox(false);
+            }
+        }
+    }
+    public void AnswerNotFinish()
+    { 
+        Debug.Log("Can't Finish Quest");
+        ToggleDialogueBox(false);
+    }
+
+
 }
 
