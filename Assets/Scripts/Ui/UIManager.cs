@@ -88,6 +88,10 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private TMP_Text btnNotFinishText;
 
+    [SerializeField]
+    private Toggle[] toggleAvatar;
+    public Toggle[] ToggleAvatar { get { return toggleAvatar; } set { toggleAvatar = value; } }
+
 
     public static UIManager instance;
 
@@ -101,6 +105,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         InitSlots();
+        MapToggleAvatar();
     }
 
     // Update is called once per frame
@@ -384,6 +389,29 @@ public class UIManager : MonoBehaviour
         ToggleDialogueBox(false);
     }
 
+    public void MapToggleAvatar()
+    {
+        foreach (Toggle t in toggleAvatar)
+            t.gameObject.SetActive(false);
 
+        for (int i = 0; i < PartyManager.instance.SelectChars.Count; i++)
+        {
+            toggleAvatar[i].gameObject.SetActive(true);
+        }
+        toggleAvatar[0].isOn = true;
+
+    }
+
+    public void SelectHeroByAvatar(int i)
+    {
+        if (toggleAvatar[i].isOn)
+        {
+            PartyManager.instance.SelectSingleHero(i);
+        }
+        else
+        {
+            PartyManager.instance.UnSelectSingleHeroByToggle(i);
+        }
+    }
 }
 
