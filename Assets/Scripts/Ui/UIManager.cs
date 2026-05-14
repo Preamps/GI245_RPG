@@ -3,6 +3,7 @@ using TMPro;
 using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class UIManager : MonoBehaviour
 {
@@ -108,6 +109,21 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Image heroImage;
 
+    [SerializeField]
+    private GameObject partyPanel;
+
+    [SerializeField]
+    private Toggle[] toggleRemove;
+
+    [SerializeField]
+    private int idToRemove = -1;
+
+    [SerializeField]
+    private Button removeButton;
+
+    [SerializeField]
+    private GameObject confirmPanel;
+
     public static UIManager instance;
 
     void Awake()
@@ -182,7 +198,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void toggleInventoryPanel()
+    public void ToggleInventoryPanel()
     {
         if (!inventoryPanel.activeInHierarchy)
         {
@@ -194,11 +210,11 @@ public class UIManager : MonoBehaviour
         {
             inventoryPanel.SetActive(false);
             blackImage.SetActive(false);
-            clearInventory();
+            ClearInventory();
         }
     }
 
-    public void clearInventory()
+    public void ClearInventory()
     {
         for (int i = 0; i < slots.Length; i++)
         {
@@ -480,5 +496,80 @@ public class UIManager : MonoBehaviour
             ClearCharPanel();
         }
     }
+
+    public void MapToggleRemove()
+    {
+        foreach(Toggle t in toggleRemove)
+            t.gameObject.SetActive(false);
+
+        List<Character> member = PartyManager.instance.Members;
+
+        for (int i = 1; i < member.Count; i++)
+        {
+            toggleRemove[i - 1].gameObject.SetActive(true);
+            toggleRemove[i - 1].targetGraphic.GetComponent<Image>().sprite
+                = member[i].AvatarPic;
+        }
+    }
+
+    private void CheckRemovButton()
+    {
+        switch (idToRemove)
+        {
+            case -1:
+            case 0:
+                removeButton.interactable = false;
+                break;
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                removeButton.interactable = true;
+                break;
+            default: 
+                removeButton.interactable = false;
+                break;
+        }
+    }
+
+    public void TogglePartyPanel (bool flag)
+    {
+        charPanel.SetActive(!flag);
+        partyPanel.SetActive(flag);
+        MapToggleRemove();
+        CheckRemovButton();
+    }
+
+    public void SelectToRemove (int i)
+    {
+        if (toggleRemove[i - 1].isOn)
+            idToRemove = i;
+        else
+            idToRemove = -1;
+
+        CheckRemovButton();
+    }
+
+    public void ToggleConfirmPanel(bool flag)
+    {
+        if (flag == false)
+        {
+            MapToggleRemove();
+            idToRemove = -1;
+            CheckRemovButton();
+        }
+        partyPanel.SetActive(!flag);
+        confirmPanel.SetActive(flag);
+    }
+
+    public void RemoveMemberFormParty()
+    {
+        toggleAvatar[idToRemove].isOn = false;
+        PartyManager.instance.RemoveHeroFromParty(idToRemove);
+        MapToggleAvatar();
+        ToggleConfirmPanel(false);  
+    }
+
 }
 
